@@ -1,7 +1,6 @@
 var REPLACE;
 
 // DATASET
-// -----------------------------------------------
 var finances = [
   ['Jan-2010', 867884], ['Feb-2010', 984655], ['Mar-2010', 322013], ['Apr-2010', -69417],
   ['May-2010', 310503], ['Jun-2010', 522857], ['Jul-2010', 1033096], ['Aug-2010', 604885],
@@ -26,9 +25,9 @@ var finances = [
   ['Sep-2016', 768450], ['Oct-2016', 102685], ['Nov-2016', 795914], ['Dec-2016', 60988],
   ['Jan-2017', 138230], ['Feb-2017', 671099]
 ];
+// -----------------------------------------------
 
 // NUMBER FORMATTING FUNCTION
-
 function formatNum(num) {
   var pounds = new Intl.NumberFormat('en-GB', {
     style: 'currency',
@@ -37,9 +36,9 @@ function formatNum(num) {
   });
   return pounds.format(num);
 }
+// -----------------------------------------------
 
 // SPLITTING THE FINANCES ARRAY INTO TWO ARRAYS
-// -----------------------------------------------
 var monthsArr = [];
 var monthsTotalsArr = [];
 
@@ -47,29 +46,54 @@ for (var i = 0; i < finances.length; i++) {
   monthsArr.push(finances[i][0]);
   monthsTotalsArr.push(finances[i][1]);
 };
+// -----------------------------------------------
+
 
 // CALCULATE THE TOTAL FROM ALL MONTHLY FIGURES
-// -----------------------------------------------
-
 var totals = 0;
 var totalAmount = monthsTotalsArr.reduce((a, b) => a + b, 0);
-
-// TO DO
 // -----------------------------------------------
 
+
+// SPLIT MONTHS INTO GROUPS OF TWO FOR MONTH-ON-MONTH CALCULATION
+function monthOnMonthGrouped(arr) {
+  var combinedMonthsArr = [];
+
+  for (var i = 0; i < arr.length; i += 2) {
+    var sub = arr.slice(i, i + 2);
+    combinedMonthsArr.push(sub);
+  }
+  return combinedMonthsArr;
+}
+// -----------------------------------------------
+
+// CALCULATE MONTH-ON-MONTH CHANGE
+// -----------------------------------------------
+
+
+// console.log(monthsTotalsArr);
+// var test1 = finances[0][1];
+// var test2 = finances[1][1];
+// var MOMG = (test2 - test1) / test1;
+
+// console.log(test1);
+// console.log(test2);
+// console.log(MOMG);
+
+
+
+// -----------------------------------------------
 
 
 // CONSOLE MESSAGE
-// -----------------------------------------------
-console.log(
-`Financial Analysis
-------------------------
-Total Months: ${monthsArr.length};
-Total: ${formatNum(totalAmount)}
-Average Change: ${REPLACE}
-Greatest Increase in Profits: ${REPLACE} ${REPLACE}
-Greatest Decrease in Profits: ${REPLACE} ${REPLACE}
-`
-);
-
+// console.log(
+// `Financial Analysis
+// ------------------------
+// Total Months: ${monthsArr.length};
+// Total: ${formatNum(totalAmount)}
+// Average Change: ${REPLACE}
+// Greatest Increase in Profits: ${REPLACE} ${REPLACE}
+// Greatest Decrease in Profits: ${REPLACE} ${REPLACE}
+// `
+// );
 // PROGRAM END -----------------------------------------------
