@@ -1,5 +1,6 @@
 var REPLACE;
 
+// Dataset
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -87,14 +88,22 @@ var finances = [
   ['Dec-2016', 60988],
   ['Jan-2017', 138230],
   ['Feb-2017', 671099]
-  ];
+];
+
+// Splitting the Array to only account for Monthly Totals
+
+for (var i = 0; i < finances.length; i++) {
+  for (var j = 0; j < finances[i].length; j++) {
+    var monthlyTotals = finances[i][1];
+  }
+};
 
 // Console Message
 
 console.log(
 `Financial Analysis
 ------------------------
-Total Months: ${REPLACE}
+Total Months: ${finances.length};
 Total: $${REPLACE}
 Average Change: $${REPLACE}
 Greatest Increase in Profits: ${REPLACE} $${REPLACE}
