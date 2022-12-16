@@ -1,3 +1,5 @@
+var REPLACE;
+
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -86,3 +88,16 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099]
   ];
+
+// Console Message
+
+console.log(
+`Financial Analysis
+------------------------
+Total Months: ${REPLACE}
+Total: $${REPLACE}
+Average Change: $${REPLACE}
+Greatest Increase in Profits: ${REPLACE} $${REPLACE}
+Greatest Decrease in Profits: ${REPLACE} $${REPLACE}
+`
+);
