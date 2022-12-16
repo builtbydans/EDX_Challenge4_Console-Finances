@@ -27,6 +27,17 @@ var finances = [
   ['Jan-2017', 138230], ['Feb-2017', 671099]
 ];
 
+// NUMBER FORMATTING FUNCTION
+
+function formatNum(num) {
+  var pounds = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    maximumFractionDigits: 0,
+  });
+  return pounds.format(num);
+}
+
 // SPLITTING THE FINANCES ARRAY INTO TWO ARRAYS
 // -----------------------------------------------
 var monthsArr = [];
@@ -36,12 +47,17 @@ for (var i = 0; i < finances.length; i++) {
   monthsArr.push(finances[i][0]);
   monthsTotalsArr.push(finances[i][1]);
 };
+
+// CALCULATE THE TOTAL FROM ALL MONTHLY FIGURES
 // -----------------------------------------------
 
-//
+var totals = 0;
+var totalAmount = monthsTotalsArr.reduce((a, b) => a + b, 0);
+
+// TO DO
 // -----------------------------------------------
 
-// -----------------------------------------------
+
 
 // CONSOLE MESSAGE
 // -----------------------------------------------
@@ -49,10 +65,11 @@ console.log(
 `Financial Analysis
 ------------------------
 Total Months: ${monthsArr.length};
-Total: $${REPLACE}
-Average Change: $${REPLACE}
-Greatest Increase in Profits: ${REPLACE} $${REPLACE}
-Greatest Decrease in Profits: ${REPLACE} $${REPLACE}
+Total: ${formatNum(totalAmount)}
+Average Change: ${REPLACE}
+Greatest Increase in Profits: ${REPLACE} ${REPLACE}
+Greatest Decrease in Profits: ${REPLACE} ${REPLACE}
 `
 );
-// -----------------------------------------------
+
+// PROGRAM END -----------------------------------------------
