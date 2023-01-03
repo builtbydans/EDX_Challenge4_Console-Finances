@@ -67,19 +67,15 @@ function monthOnMonthGrouped(arr) {
 }
 
 var groupedMonthlyArr = monthOnMonthGrouped(monthsTotalsArr);
-console.log(groupedMonthlyArr);
 // -----------------------------------------------
 
 // CALCULATE MONTH-ON-MONTH CHANGE
 var monthlyCalculation = groupedMonthlyArr.map(e => e[0] - e[1]);
-console.log(monthlyCalculation);
 
 var total = 0;
 for (var i = 0; i < monthlyCalculation.length; i++) {
   total += monthlyCalculation[i];
 }
-console.log(total);
-console.log(total / monthlyCalculation.length);
 // -----------------------------------------------
 
 
