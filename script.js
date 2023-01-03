@@ -65,35 +65,37 @@ function monthOnMonthGrouped(arr) {
   }
   return combinedMonthsArr;
 }
+
+var groupedMonthlyArr = monthOnMonthGrouped(monthsTotalsArr);
+console.log(groupedMonthlyArr);
 // -----------------------------------------------
 
 // CALCULATE MONTH-ON-MONTH CHANGE
+var monthlyCalculation = groupedMonthlyArr.map(e => e[0] - e[1]);
+console.log(monthlyCalculation);
+
+var total = 0;
+for (var i = 0; i < monthlyCalculation.length; i++) {
+  total += monthlyCalculation[i];
+}
+console.log(total);
+console.log(total / monthlyCalculation.length);
 // -----------------------------------------------
 
 
-// console.log(monthsTotalsArr);
-// var test1 = finances[0][1];
-// var test2 = finances[1][1];
-// var MOMG = (test2 - test1) / test1;
-
-// console.log(test1);
-// console.log(test2);
-// console.log(MOMG);
-
-
-
-// -----------------------------------------------
-
+// TO EXAMINER
+/* Unfortunately, I was unable to understand the maths needed to calculate the correct average, meaning
+   I would have been unable to work out the Greatest Increase and Greatest Decrease */
 
 // CONSOLE MESSAGE
-// console.log(
-// `Financial Analysis
-// ------------------------
-// Total Months: ${monthsArr.length};
-// Total: ${formatNum(totalAmount)}
-// Average Change: ${REPLACE}
-// Greatest Increase in Profits: ${REPLACE} ${REPLACE}
-// Greatest Decrease in Profits: ${REPLACE} ${REPLACE}
-// `
-// );
+console.log(
+`Financial Analysis
+------------------------
+Total Months: ${monthsArr.length};
+Total: ${formatNum(totalAmount)}
+Average Change: ${REPLACE}
+Greatest Increase in Profits: ${REPLACE} ${REPLACE}
+Greatest Decrease in Profits: ${REPLACE} ${REPLACE}
+`
+);
 // PROGRAM END -----------------------------------------------
