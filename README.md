@@ -11,7 +11,7 @@ The live project can be found here:
 
 ## Website Screenshot
 
-![screenshot-of-image](https://github.com/builtbydans/EDX_Challenge3_Bootstrap-Portfolio/blob/main/screenshot.png)
+![screenshot-of-image](https://github.com/builtbydans/EDX_Challenge3_Bootstrap-Portfolio//main/screenshot.png)
 
 ## Disclaimer
 
